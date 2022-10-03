@@ -1,4 +1,4 @@
-package com.youngbinapp.newarchitecture.components;
+package com.chabiri.youngbinapp.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

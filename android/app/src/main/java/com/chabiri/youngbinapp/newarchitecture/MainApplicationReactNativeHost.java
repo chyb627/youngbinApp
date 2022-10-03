@@ -1,4 +1,4 @@
-package com.youngbinapp.newarchitecture;
+package com.chabiri.youngbinapp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.youngbinapp.BuildConfig;
-import com.youngbinapp.newarchitecture.components.MainComponentsRegistry;
-import com.youngbinapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.chabiri.youngbinapp.BuildConfig;
+import com.chabiri.youngbinapp.newarchitecture.components.MainComponentsRegistry;
+import com.chabiri.youngbinapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
