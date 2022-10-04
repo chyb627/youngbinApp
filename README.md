@@ -1,5 +1,7 @@
 # youngbinapp
+
 youngbinapp
+
 ## 앱아이콘
 
 [https://velog.io/@dody_/React-Native-%EC%95%B1-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0]
@@ -112,6 +114,7 @@ const account: Account = {
 }
 
 ```
+
 ## react-native-vector-icons 에러
 
 링크
@@ -119,8 +122,9 @@ const account: Account = {
 
 에러내용
 [error React Native CLI uses autolinking for native dependencies, but the following modules are linked manually:
+
 - react-native-vector-icons (to unlink run: "react-native unlink react-native-vector-icons")
-This is likely happening when upgrading React Native from below 0.60 to 0.60 or above. Going forward, you can unlink this dependency via "react-native unlink <dependency>" and it will be included in your app automatically. If a library isn't compatible with autolinking, disregard this message and notify the library maintainers.]
+  This is likely happening when upgrading React Native from below 0.60 to 0.60 or above. Going forward, you can unlink this dependency via "react-native unlink <dependency>" and it will be included in your app automatically. If a library isn't compatible with autolinking, disregard this message and notify the library maintainers.]
 
 이유
 RN는 npm에서 설치한 모듈들을 자동으로 연결해주는데, Cocoapod을 이용하였기에 autolinking이 아닌 수동 연결로 간주하기 때문이다.
@@ -134,5 +138,16 @@ yarn add @reduxjs/toolkit react-redux redux-flipper react-native-flipper
 
 ## DismissKeyboardView
 
-DismissKeyboardView 컴포넌트 추가. 
+DismissKeyboardView 컴포넌트 추가.
 DismissKeyboardView를 사용하면 인풋아닌곳을 누르면 키보드가 내려감. 키보드 화면가림방지 기능이 있음.
+
+## [React-Native] npx react-native init appName 에러
+
+`` error Android project not found. Are you sure this is a React Native project? If your Android files are located in a non-standard location (e.g. not inside 'android' folder), consider setting `project.android.sourceDir` option to point to a new location. ``
+
+- 해결방법
+
+npm uninstall -g react-native-cli
+// 새로운 react-native global 설치
+npm install -g react-native-cli
+npm install -g react-native
