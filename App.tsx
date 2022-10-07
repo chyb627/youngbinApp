@@ -1,13 +1,17 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { NavigationContainer } from '@react-navigation/native';
+import { Provider } from 'react-redux';
+import store from './src/store';
+
+import RootStack from './src/pages/RootStack';
 
 function App() {
   return (
-    <SafeAreaView>
-      <Text className="underline text-3xl">Hello, RN!</Text>
-      <Icon name="home" size={42} />
-    </SafeAreaView>
+    <Provider store={store}>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </Provider>
   );
 }
 

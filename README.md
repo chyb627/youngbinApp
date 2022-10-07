@@ -25,37 +25,6 @@ yarn add @react-native-firebase/app @react-native-firebase/auth @react-native-fi
 @react-native-firebase/firestore 은 실시간 데이터베이스를 위해 필요,
 @react-native-firebase/storage은 추후 이미지를 업로드할 때 필요한 라이브러리
 
-#### 폴더 구조
-
-RootStack
-MainTab
-HomeStack
-FeedScreen
-PostScreen
-ProfileScreen
-MyProfileStack
-MyProfileScreen
-UploadScreen
-ModifyScreen
-SettingScreen
-SignInScreen
-WelcomeScreen
-
-RootStack : 프로젝트 최상위 스택
-MainTab : 로그인하면 보일 화면
--HomeStack : 첫번째 탭인 홈의 스택
-FeedScreen : 포스트들의 목록을 볼 수 있는 화면
-PostScreen : 하나의 포스트를 볼 수 있는 화면
-ProfileScreen : 특정 사용자의 프로필을 볼 수 있는 화면
--MyProfileStack : 두번째 탭인 프로필의 스택
-MyProfileScreen : 자신의 프로필을 볼 수 있는 화면
-PostScreen : 하나의 포스트를 볼 수 있는 화면. HomeStack과 컴포넌트 공유
--UploadScreen : 사진을 업로드하는 화면
--ModifyScreen : 포스트의 문구를 수정하는 화면
--SettingScreen : 설정 화면
--SignInScreen : 로그인 화면
--WelcomeScreen : 회원가입 후 프로필 사진과 이름을 설정하는 화면
-
 ## useEffext async/await
 
 useEffect 내부에서 async/await를 사용하고 적용하기.
@@ -131,6 +100,12 @@ RN는 npm에서 설치한 모듈들을 자동으로 연결해주는데, Cocoapod
 
 해결방법
 npx react-native unlink react-native-vector-icons
+
+## react-navigation
+
+yarn add @react-navigation/native
+yarn add @react-navigation/native-stack
+yarn add @react-navigation/bottom-tabs
 
 ## Redux
 
