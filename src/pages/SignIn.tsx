@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState, useRef, useCallback } from 'react';
 import { Text, View, Alert, Image } from 'react-native';
-import DismissKeyboardView from '../components/DismissKeyboardView';
+import DismissKeyboardView from '../components/UI/DismissKeyboardView';
 import RNBPressable from '../components/RNBPressable';
 import TextInput from '../components/CustomTextInput';
 import { SafeAreaView } from 'react-native-safe-area-context';

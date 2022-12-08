@@ -130,4 +130,5 @@ npm install -g react-native
 
 ## component
 
-- DismissKeyboardView : input밖을 누르면 키보드 내려감. 키보드에 input가려지지 않게함.
+- components/UI/DismissKeyboardView : input밖을 누르면 키보드 내려감. 키보드에 input가려지지 않게함.
+- components/UI/Margin : 세로로 배치가 될 때 Margin을 주는 경우가 많으므로 재사용 컴포넌트를 만듬. <Margin height={10} /> 이런 형식으로 사용.
