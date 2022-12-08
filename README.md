@@ -126,3 +126,8 @@ npm uninstall -g react-native-cli
 // 새로운 react-native global 설치
 npm install -g react-native-cli
 npm install -g react-native
+
+
+## component
+
+- DismissKeyboardView : input밖을 누르면 키보드 내려감. 키보드에 input가려지지 않게함.
