@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import userSlice from '../slice/user';
-// import orderSlice from '../slices/order';
+import postSlice from '../slice/post';
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
-  // order: orderSlice.reducer,
+  post: postSlice.reducer,
 });
 
 // 타입스크립트
