@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../store';
 import { loadMyInfo } from '../actions/user';
 import { loadPosts } from '../actions/post';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import MainPost from '../components/Main/MainPost';
 
 export default () => {
   const dispatch = useAppDispatch();
   const { me } = useSelector((state) => state.user);
   const { mainPosts, hasMorePosts, loadPostsLoading, retweetError } = useSelector((state) => state.post);
-  console.log('mainPosts', mainPosts);
 
   useEffect(() => {
     const fc = async () => {
@@ -17,11 +18,11 @@ export default () => {
       await dispatch(loadMyInfo());
     };
     fc();
-  }, []);
+  }, [dispatch]);
 
   return (
-    <View>
-      <Text>Main페이지입니다.</Text>
-    </View>
+    <SafeAreaView>
+      <MainPost data={mainPosts} />
+    </SafeAreaView>
   );
 };
