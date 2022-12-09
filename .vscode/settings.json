@@ -33,5 +33,6 @@
   "typescript.locale": "en",
   "editor.tabSize": 2,
   "java.configuration.updateBuildConfiguration": "disabled",
-  "C_Cpp.errorSquiggles": "Disabled"
+  "C_Cpp.errorSquiggles": "Disabled",
+  "java.compile.nullAnalysis.mode": "disabled"
 }

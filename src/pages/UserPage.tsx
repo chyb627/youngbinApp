@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
+import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../store';
 import { loadMyInfo } from '../actions/user';
 import { loadPosts } from '../actions/post';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import MainPost from '../components/Main/MainPost';
+import LoginForm from '../components/UserPage/LoginForm';
 
 export default () => {
   const dispatch = useAppDispatch();
-  const { mainPosts } = useSelector((state) => state.post);
+  const { me } = useSelector((state) => state.user);
 
   useEffect(() => {
     const fc = async () => {
@@ -18,9 +18,12 @@ export default () => {
     fc();
   }, [dispatch]);
 
+  if (!me) {
+    return <LoginForm />;
+  }
   return (
-    <SafeAreaView>
-      <MainPost data={mainPosts} />
-    </SafeAreaView>
+    <View>
+      <Text>hihihihihihi</Text>
+    </View>
   );
 };

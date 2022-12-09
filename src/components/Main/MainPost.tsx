@@ -20,7 +20,7 @@ export default ({ data }) => {
     );
   }
 
-  return <FlatList data={data} renderItem={renderItem} keyExtractor={(item) => item.id} />;
+  return <FlatList data={data} renderItem={renderItem} keyExtractor={(_, index) => index} />;
 };
 
 const styles = StyleSheet.create({
