@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Margin from '../UI/Margin';
 import { GlobalStyles } from '../../constants/styles';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 export default ({ data }) => {
   function renderItem({ item }) {
@@ -10,7 +10,7 @@ export default ({ data }) => {
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.nickname}>{item.User.nickname}</Text>
-          <Text>{moment(item.createdAt).format('YYYY.MM.DD')}</Text>
+          <Text>{dayjs(item.createdAt).format('YYYY.MM.DD')}</Text>
         </View>
 
         <Margin height={16} />

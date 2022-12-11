@@ -5,6 +5,7 @@ import { loadMyInfo } from '../actions/user';
 import { loadPosts } from '../actions/post';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MainPost from '../components/Main/MainPost';
+// import Calendar from '../components/UI/Calendar';
 
 export default () => {
   const dispatch = useAppDispatch();
@@ -20,6 +21,7 @@ export default () => {
 
   return (
     <SafeAreaView>
+      {/* <Calendar /> */}
       <MainPost data={mainPosts} />
     </SafeAreaView>
   );
