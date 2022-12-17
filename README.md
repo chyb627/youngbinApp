@@ -135,6 +135,9 @@ yarn add @reduxjs/toolkit react-redux redux-flipper react-native-flipper
 <FlatList
   data={[{ busNumber: 146 }, { busNumber: 146 }, { busNumber: 146 }]}
   renderItem={({ item }) => <Text>{item.busNumber}</Text>}
+  ItemSeparatorComponent={()=>{}} // 구분선
+  ListHeaderComponent={()=>{}} // FlatList 위쪽 화면
+  ListFooterComponent={()=>{}} // FlatList 아래쪽 화면
 />
 
 <SectionList
@@ -178,3 +181,43 @@ useEffect(()=>{
 ```
 
 - 1초마다 현재의시각을 기준으로 now가 다시 세팅되기때문에 now가 계속 업데이트된다.
+
+## RefreshControl
+
+- RefreshControl은 어떤 ScrollView나 FlatList나 SectionList등의 스크롤이 가능한곳에서 ScrollY가 0 미만으로 갈때 실행되는 스와이프 이벤트.
+
+```js
+
+const [refreshing, setRefreshing] = useState(false);
+
+const onRefresh = () => {
+  console.log('call onRefresh')
+  setRefreshing(true);
+}
+
+useEffect(()=>{
+  if(refreshing) {
+    setTimeout(()=>{
+      // API refetch 완료되는 시점.
+      setRefreshing(false);
+    }, 3000)
+  }
+},[refreshing])
+
+<SectionList
+  style = {{ flex: 1, width: "100%" }}
+  sections={sections}
+  ListHeaderComponent={ListHeaderComponent}
+  renderSectionHeader={renderSectionHeader}
+  renderItem={renderItem}
+  ItemSeparatorComponent={ItemSeparatorComponent}
+  ListFooterComponent={ListFooterComponent}
+  refreshControl={
+    <RefreshControl 
+      refreshing={refreshing}  // 리프레시가 되고있는 중인가? boolean값.
+      onRefresh={onRefresh}  // 스크롤의 Y축이 0에 다다랐을때 실행되는 함수.
+    >
+  }
+/>
+
+```
