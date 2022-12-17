@@ -2,13 +2,13 @@
 
 youngbinapp
 
-## 앱아이콘
+## [앱아이콘](https://velog.io/@dody_/React-Native-%EC%95%B1-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0)
 
-[https://velog.io/@dody_/React-Native-%EC%95%B1-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0]
+: 앱아콘 관련 링크.
 
-## 스플래시스크린
+## [스플래시스크린](https://velog.io/@hojin9622/React-Native-Splash-Screen-%EC%A0%9C%EC%9E%91IOS)
 
-[https://velog.io/@hojin9622/React-Native-Splash-Screen-%EC%A0%9C%EC%9E%91IOS]
+: 스플래시스크린 관련 링크.
 
 ## 디버그 서명 인증서 SHA-1
 
@@ -84,21 +84,19 @@ const account: Account = {
 
 ```
 
-## react-native-vector-icons 에러
+## [react-native-vector-icons에러](https://hanarotg.medium.com/rn-ios-react-native-vector-icons-%EC%97%90%EC%84%9C-%EC%95%A0%EB%A8%B9%EB%8A%94-%EC%A4%91%EC%83%9D%EB%93%A4%EC%97%90%EA%B2%8C-e80e1f4aaf89)
 
-링크
-[https://hanarotg.medium.com/rn-ios-react-native-vector-icons-%EC%97%90%EC%84%9C-%EC%95%A0%EB%A8%B9%EB%8A%94-%EC%A4%91%EC%83%9D%EB%93%A4%EC%97%90%EA%B2%8C-e80e1f4aaf89]
-
-에러내용
-[error React Native CLI uses autolinking for native dependencies, but the following modules are linked manually:
+- react-native-vector-icons 관련 에러
+- 에러내용
+- [error React Native CLI uses autolinking for native dependencies, but the following modules are linked manually:
 
 - react-native-vector-icons (to unlink run: "react-native unlink react-native-vector-icons")
   This is likely happening when upgrading React Native from below 0.60 to 0.60 or above. Going forward, you can unlink this dependency via "react-native unlink <dependency>" and it will be included in your app automatically. If a library isn't compatible with autolinking, disregard this message and notify the library maintainers.]
 
-이유
+- 이유
 RN는 npm에서 설치한 모듈들을 자동으로 연결해주는데, Cocoapod을 이용하였기에 autolinking이 아닌 수동 연결로 간주하기 때문이다.
 
-해결방법
+- 해결방법
 npx react-native unlink react-native-vector-icons
 
 ## react-navigation
@@ -111,24 +109,72 @@ yarn add @react-navigation/bottom-tabs
 
 yarn add @reduxjs/toolkit react-redux redux-flipper react-native-flipper
 
-## DismissKeyboardView
-
-DismissKeyboardView 컴포넌트 추가.
-DismissKeyboardView를 사용하면 인풋아닌곳을 누르면 키보드가 내려감. 키보드 화면가림방지 기능이 있음.
-
-## [React-Native] npx react-native init appName 에러
+## npx react-native init appName 에러 (0.70이후 새로운 rn폴더 만드는데 나오는 에러)
 
 `` error Android project not found. Are you sure this is a React Native project? If your Android files are located in a non-standard location (e.g. not inside 'android' folder), consider setting `project.android.sourceDir` option to point to a new location. ``
 
 - 해결방법
+: 새로운 react-native global 설치
 
-npm uninstall -g react-native-cli
-// 새로운 react-native global 설치
-npm install -g react-native-cli
-npm install -g react-native
-
+- npm uninstall -g react-native-cli
+- npm install -g react-native-cli
+- npm install -g react-native
 
 ## component
 
-- components/UI/DismissKeyboardView : input밖을 누르면 키보드 내려감. 키보드에 input가려지지 않게함.
+- components/UI/DismissKeyboardView : input밖을 누르면 키보드 내려감. 키보드에 input가려지지 않게함. 키보드 화면가림방지 기능이 있음.
 - components/UI/Margin : 세로로 배치가 될 때 Margin을 주는 경우가 많으므로 재사용 컴포넌트를 만듬. <Margin height={10} /> 이런 형식으로 사용.
+
+## FlatList vs SectionList
+
+- FlatList는 data 안에 배열을 넣어줌
+- SectionList에는 sections props을 쓴다. 그 object안에 data가 FlatList의 data와 같은부분이다.
+
+```js
+
+<FlatList
+  data={[{ busNumber: 146 }, { busNumber: 146 }, { busNumber: 146 }]}
+  renderItem={({ item }) => <Text>{item.busNumber}</Text>}
+/>
+
+<SectionList
+  sections={[
+    {
+      title: '마을버스',
+      data: [{ busNumber: 146 }, { busNumber: 146 }, { busNumber: 146 }],
+    },
+    {
+      title: '광역버스',
+      data: [{ busNumber: 146 }, { busNumber: 146 }, { busNumber: 146 }],
+    },
+    {
+      title: '고속버스',
+      data: [{ busNumber: 146 }, { busNumber: 146 }, { busNumber: 146 }],
+    },
+  ]}
+  renderSectionHeader={({ section: { title } }) => <Text>{title}</Text>}
+  renderItem={({ item }) => <Text>{item.busNumber}</Text>}
+/>
+```
+
+## useState, useEffect, setInterval을 이용해 1초마다 업데이트하기.
+
+```js
+
+const [now, setNow] = useState(dayjs());
+
+useEffect(()=>{
+  const interval = setInterval(()=>{
+    const newNow = dayjs();
+    setNow(newNow);
+  }, 1000); // 1초마다 이안에있는 함수를 실행시켜 달라는 뜻.
+
+  return () => {
+    clearInterval(interval); // 종료시점도 필요. 컴포넌트가 언마운트되는시점에 인터벌을 클리어 해줘야함.
+  }
+
+}, [])
+
+```
+
+- 1초마다 현재의시각을 기준으로 now가 다시 세팅되기때문에 now가 계속 업데이트된다.

@@ -50,7 +50,11 @@ function RootStack() {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="BottomOverview" component={BottomOverview} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="BottomOverview"
+        component={BottomOverview}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen name="Main1" component={Main} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
