@@ -5,6 +5,7 @@ module.exports = function (api) {
       'babel-plugin-styled-components',
       'tailwind-rn',
       'transform-remove-console',
+      'react-native-reanimated/plugin',
       [
         'module-resolver',
         {
