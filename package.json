@@ -9,7 +9,8 @@
     "ios:clean": "cd ios && rm -rf Pods && pod cache clean --all && pod install && cd ..",
     "start": "react-native start --reset-cache",
     "rstart": "react-native start --reset-cache",
-    "pod": "cd ios && pod install && cd .."
+    "pod": "cd ios && pod install && cd ..",
+    "test:typescript": "tsc"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
