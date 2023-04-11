@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../components/ui/Header/Header';
+import ToastModule from '../nativemodule/ToastModule';
 
 const HomeScreen = () => {
   return (
@@ -7,6 +8,8 @@ const HomeScreen = () => {
       <Header>
         <Header.Title title="Main" />
       </Header>
+
+      <ToastModule />
     </>
   );
 };
