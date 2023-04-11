@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Test 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  hitSlop={
+    {
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+    }
+  }
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": undefined,
+      "opacity": 1,
+      "paddingHorizontal": undefined,
+      "paddingVertical": undefined,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+        "fontSize": 10,
+        "fontWeight": "normal",
+        "lineHeight": undefined,
+        "textDecorationLine": "none",
+      }
+    }
+  >
+    TEST_BUTTON
+  </Text>
+</View>
+`;
