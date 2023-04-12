@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.youngbinapp"
+    namespace "com.chabiri.youngbinapp"
     defaultConfig {
-        applicationId "com.youngbinapp"
+        applicationId "com.chabiri.youngbinapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

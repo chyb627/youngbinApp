@@ -1,4 +1,4 @@
-package com.youngbinapp;
+package com.chabiri.youngbinapp;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

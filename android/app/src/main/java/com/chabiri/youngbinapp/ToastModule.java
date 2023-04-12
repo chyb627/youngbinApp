@@ -1,4 +1,4 @@
-package com.youngbinapp;
+package com.chabiri.youngbinapp;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;

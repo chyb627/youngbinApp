@@ -1,4 +1,4 @@
-package com.youngbinapp;
+package com.chabiri.youngbinapp;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
