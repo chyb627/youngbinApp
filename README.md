@@ -1,6 +1,6 @@
 # youngbinapp
 
-## native module 만들기
+## native module 만들기 (Java)
 
   1. 네이티브 모듈을 만들기 위해서는 리액트 네이티브의 세 가지 클래스를 불러와야한다.
     - import com.facebook.react.bridge.ReactApplicationContext;
@@ -21,7 +21,7 @@
 
   ```java
 
-  package com.youngbinapp;
+  package com.chabiri.youngbinapp;
 
   import com.facebook.react.bridge.ReactApplicationContext;
   import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -79,7 +79,7 @@
 
   ```java
 
-  package com.youngbinapp;
+  package com.chabiri.youngbinapp;
 
   import com.facebook.react.ReactPackage;
   import com.facebook.react.bridge.NativeModule;
@@ -129,3 +129,36 @@
   }
 
   ```
+
+## native module 만들기 (Kotlin)
+
+  1. android/build.gradle 코틀린을 프로젝트에 사용하기 위해 버전을 명시하고, repository에 의존성을 추가하기.
+
+  ```java
+
+  buildscript {
+    ext {
+        buildToolsVersion = "33.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+        kotlinVersion="1.6.0"
+
+        // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
+        ndkVersion = "23.1.7779620"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${project.ext.kotlinVersion}")
+        classpath("com.android.tools.build:gradle:7.3.1")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+    }
+  }
+
+  ```
+
+  2. android/app/build.gradle에 apply plugin: "kotlin-android" 추가하기
+
